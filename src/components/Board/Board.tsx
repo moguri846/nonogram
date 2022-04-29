@@ -108,6 +108,19 @@ const Board = ({ randomBoard, board, onSetBoard }: IProps) => {
             </td>
             {row.map((b, colIdx) => (
               <td
+                className={` ${
+                  (rowIdx + 1) % 5 === 0
+                    ? rowIdx + 1 === randomBoard.length
+                      ? ""
+                      : "row-border"
+                    : ""
+                } ${
+                  (colIdx + 1) % 5 === 0
+                    ? colIdx + 1 === randomBoard.length
+                      ? ""
+                      : "col-border"
+                    : ""
+                }`}
                 key={colIdx}
                 data-row={rowIdx}
                 data-col={colIdx}
